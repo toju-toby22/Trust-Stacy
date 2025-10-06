@@ -3,12 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { FormData, SubmittedData } from './types';
 import { CONFIG } from './config';
 import { getGuestNameFromURL } from './utils';
+import image from "./flower-pattern-png-5.png"
 
 interface RSVPFormProps {
   onSubmissionSuccess: (data: SubmittedData) => void;
 }
 
 export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
+
+  
   const [formData, setFormData] = useState<FormData>({
     guestName: '',
     rsvp: 'yes',
@@ -17,6 +20,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
   });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
+  const [showQA, setShowQA] = useState<boolean>(false);
 
   useEffect(() => {
     const guestName = getGuestNameFromURL();
@@ -66,14 +70,22 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-xl p-8 max-w-2xl mx-auto">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">{CONFIG.EVENT_NAME}</h1>
+
+      <div className='flex items-center justify-between gap-10'>
+<img src={image} alt="" className='h-[90px] rotate-[90deg] relative top-[-70px] left-[-50px]' />
+
+        <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold text-gray-800 mb-2 monsieur-la-doulaise-regular">{CONFIG.EVENT_NAME}</h1>
         <div className="h-1 w-20 bg-green-500 mx-auto rounded-full mb-4"></div>
         <div className="text-gray-600 space-y-1">
           <p className="text-lg font-semibold">{CONFIG.EVENT_DATE}</p>
           <p>{CONFIG.EVENT_TIME}</p>
           <p>{CONFIG.EVENT_LOCATION}</p>
         </div>
+      </div>
+
+<img src={image} alt="" className='h-[90px] rotate-[90deg] scale-y-[-1] relative top-[-70px] right-[-50px]' />
+
       </div>
 
       {error && (
@@ -139,13 +151,67 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
             name="giftOption"
             value={formData.giftOption}
             onChange={handleChange}
+
+            
           >
             <option value="cashapp">CashApp</option>
             <option value="physical">Physical Gift</option>
+
+            <svg 
+              className={"w-6 h-6 text-emerald-600 transition-transform"}
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </select>
         </div>
 
-        <div>
+
+         <div className="mb-6 bg-gradient-to-r from-yellow-50 via-emerald-50 to-teal-50 rounded-lg p-6 border border-emerald-200">
+          <button
+            onClick={() => setShowQA(!showQA)}
+            className="w-full flex items-center justify-between text-left"
+          >
+            <div>
+              <h3 className="text-xl font-bold text-emerald-800 mb-1">Q & A</h3>
+              <p className="text-sm text-emerald-700">
+                For all our friends and family who have lots of questions, please check out our Q & A first!
+              </p>
+            </div>
+            <svg 
+              className={`w-6 h-6 text-emerald-600 transition-transform ${showQA ? 'rotate-180' : ''}`}
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {showQA && (
+            <div className="mt-4 space-y-4 border-t border-emerald-200 pt-4">
+              <div>
+                <p className="font-semibold text-emerald-900 mb-1">When is the RSVP deadline?</p>
+                <p className="text-emerald-800">Please RSVP by February 22nd, so we can have an accurate headcount. :)</p>
+              </div>
+              
+              <div>
+                <p className="font-semibold text-emerald-900 mb-1">What should I wear?</p>
+                <p className="text-emerald-800">Semi-formal attire. Think cocktail dresses and dress shirts!</p>
+              </div>
+              
+              <div>
+                <p className="font-semibold text-emerald-900 mb-1">Can I bring a plus one?</p>
+                <p className="text-emerald-800">Please only bring a plus one if your invitation specifically mentions it.</p>
+              </div>
+            </div>
+          )}
+        </div>
+
+
+        {/* <div>
           <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="notes">
             Additional Notes (Optional)
           </label>
@@ -158,7 +224,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
             rows={4}
             placeholder="Dietary restrictions, plus-ones, special requests..."
           />
-        </div>
+        </div> */}
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
           <button
@@ -185,9 +251,9 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
             href={CONFIG.GOOGLE_CALENDAR_EVENT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto text-center font-bold text-sm text-blue-500 hover:text-blue-700 underline"
+            className="w-full sm:w-auto text-center font-bold text-sm  hover:text-blue-700 underline bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition duration-200 shadow-md hover:shadow-lg"
           >
-            Add to Calendar →
+            Add to Calendar 
           </a>
         </div>
       </div>
