@@ -69,13 +69,18 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-xl p-8 max-w-2xl mx-auto">
+    <div className=" bg-white rounded-xl shadow-xl p-8 max-w-2xl mx-auto relative overflow-hidden ">
 
-      <div className='flex items-center justify-between gap-10'>
-<img src={image} alt="" className='h-[90px] rotate-[90deg] relative top-[-70px] left-[-50px]' />
+      <div className='flex justify-between items-center  '>
+<img src={image} alt="" className='h-12 lg:h-[70px] rotate-[90deg] absolute top-[10px] left-[-19px] ' />
+<img src={image} alt="" className='h-12 lg:h-[70px] rotate-[90deg] absolute top-[10px] right-[-19px] scale-y-[-1] ' />
+
+      </div>
+
+      <div className='flex items-center justify-center '>
 
         <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2 monsieur-la-doulaise-regular">{CONFIG.EVENT_NAME}</h1>
+        <h1 className="text-[40px] text-center font-bold text-gray-800 mb-2  monsieur-la-doulaise-regular">{CONFIG.EVENT_NAME}</h1>
         <div className="h-1 w-20 bg-green-500 mx-auto rounded-full mb-4"></div>
         <div className="text-gray-600 space-y-1">
           <p className="text-lg font-semibold">{CONFIG.EVENT_DATE}</p>
@@ -84,7 +89,6 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
         </div>
       </div>
 
-<img src={image} alt="" className='h-[90px] rotate-[90deg] scale-y-[-1] relative top-[-70px] right-[-50px]' />
 
       </div>
 
@@ -228,7 +232,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
           <button
-            className={`w-full sm:w-auto bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition duration-200 shadow-md hover:shadow-lg ${
+            className={`w-full sm:w-auto bg-gradient-to-r from-red-700 via-rose-600 to-fuchsia-600 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition duration-200 shadow-md hover:shadow-lg ${
               loading ? 'opacity-50 cursor-not-allowed' : ''
             }`}
             onClick={handleSubmit}
@@ -251,7 +255,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
             href={CONFIG.GOOGLE_CALENDAR_EVENT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto text-center font-bold text-sm  hover:text-blue-700 underline bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition duration-200 shadow-md hover:shadow-lg"
+            className="w-full sm:w-auto text-center font-bold text-sm  bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-lg focus:outline-none focus:ring-4 focus:ring-green-300 transition duration-200 shadow-md hover:shadow-lg"
           >
             Add to Calendar 
           </a>
