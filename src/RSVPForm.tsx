@@ -4,6 +4,8 @@ import { FormData, SubmittedData } from './types';
 import { CONFIG } from './config';
 import { getGuestNameFromURL } from './utils';
 import image from "./flower-pattern-png-5.png"
+import { FaChevronDown } from "react-icons/fa6";
+
 
 interface RSVPFormProps {
   onSubmissionSuccess: (data: SubmittedData) => void;
@@ -21,12 +23,20 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [showQA, setShowQA] = useState<boolean>(false);
+   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const guestName = getGuestNameFromURL();
     if (guestName) {
       setFormData(prev => ({ ...prev, guestName }));
     }
+
+
+     const timer = setTimeout(() => {
+      setIsFormVisible(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -69,7 +79,26 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
   };
 
   return (
-    <div className=" bg-white rounded-xl shadow-xl p-8 max-w-2xl mx-auto relative overflow-hidden ">
+    <div>
+
+
+       {/* Loading State */}
+      {!isFormVisible && (
+        <div className="relative flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-emerald-600 mb-4"></div>
+            <p className="text-black  font-extrabold text-4xl monsieur-la-doulaise-regular-diff">Loading your invitation...</p>
+          </div>
+        </div>
+      )}
+      
+      <div className={`bg-white rounded-xl shadow-xl p-8 max-w-2xl mx-auto relative overflow-hidden transition-all duration-1000 ${
+          isFormVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }
+        `}>
+
+
+      
 
       <div className='flex justify-between items-center  '>
 <img src={image} alt="" className='h-12 lg:h-[70px] rotate-[90deg] absolute top-[10px] left-[-19px] ' />
@@ -146,8 +175,12 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
         </div>
 
         <div>
-          <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="giftOption">
-            Gift Preference
+          <label className=" flex justify-between items-baseline text-gray-700 text-sm font-semibold mb-2" htmlFor="giftOption">
+            Gift Preference :
+
+           <FaChevronDown
+           />
+
           </label>
           <select
             className="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -158,17 +191,9 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
 
             
           >
-            <option value="cashapp">CashApp</option>
+            <option className='bg-white hover:bg-slate-400 ' value="cashapp">CashApp</option>
             <option value="physical">Physical Gift</option>
 
-            <svg 
-              className={"w-6 h-6 text-emerald-600 transition-transform"}
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
           </select>
         </div>
 
@@ -261,6 +286,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 }
