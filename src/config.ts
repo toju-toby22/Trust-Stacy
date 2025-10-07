@@ -6,5 +6,5 @@ export const CONFIG: Config = {
   EVENT_NAME: 'Wedding Dinner',
   EVENT_DATE: 'December 06, 2025',
   EVENT_TIME: '5:00 PM',
-  EVENT_LOCATION: 'Grand Hall, Downtown'
+  EVENT_LOCATION: 'Walsh Blanc'
 };

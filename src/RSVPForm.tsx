@@ -174,7 +174,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <label className=" flex justify-between items-baseline text-gray-700 text-sm font-semibold mb-2" htmlFor="giftOption">
             Gift Preference :
 
@@ -191,11 +191,11 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
 
             
           >
-            <option className='bg-white hover:bg-slate-400 ' value="cashapp">CashApp</option>
+            
             <option value="physical">Physical Gift</option>
 
           </select>
-        </div>
+        </div> */}
 
 
          <div className="mb-6 bg-gradient-to-r from-yellow-50 via-emerald-50 to-teal-50 rounded-lg p-6 border border-emerald-200">
@@ -206,7 +206,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
             <div>
               <h3 className="text-xl font-bold text-emerald-800 mb-1">Q & A</h3>
               <p className="text-sm text-emerald-700">
-                For all our friends and family who have lots of questions, please check out our Q & A first!
+                For all our friends and family who have lots of questions, please check out our Q & A 
               </p>
             </div>
             <svg 
@@ -222,15 +222,30 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
           {showQA && (
             <div className="mt-4 space-y-4 border-t border-emerald-200 pt-4">
               <div>
+                <p className="font-semibold text-emerald-900 mb-1">Wish to give a Gift?</p>
+                <p className="text-emerald-800">Should you wish to give a gift, a monetary contribution would be truly appreciated as we build our home together.
+              Account details: 007844799
+              Standard Chartered Bank (Stacy)</p>
+              </div>
+
+               <div>
                 <p className="font-semibold text-emerald-900 mb-1">When is the RSVP deadline?</p>
                 <p className="text-emerald-800">Please RSVP by February 22nd, so we can have an accurate headcount. :)</p>
               </div>
+
+
+              
               
               <div>
                 <p className="font-semibold text-emerald-900 mb-1">What should I wear?</p>
-                <p className="text-emerald-800">Semi-formal attire. Think cocktail dresses and dress shirts!</p>
+                <p className="text-emerald-800">Cocktail dresses (women) and dinner gowns, or suit jacket (men) and kaftan</p>
               </div>
               
+              <div>
+                <p className="font-semibold text-emerald-900 mb-1">Colour of the day?</p>
+                <p className="text-emerald-800">Teal , emerald ,beige and champagne gold.</p>
+              </div>
+
               <div>
                 <p className="font-semibold text-emerald-900 mb-1">Can I bring a plus one?</p>
                 <p className="text-emerald-800">Please only bring a plus one if your invitation specifically mentions it.</p>

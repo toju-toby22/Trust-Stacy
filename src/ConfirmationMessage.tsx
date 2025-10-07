@@ -37,12 +37,12 @@ export function ConfirmationMessage({ data, onReturn }: ConfirmationMessageProps
                 {data.rsvp === 'yes' ? '✓ Yes' : '✗ No'}
               </span>
             </div>
-            <div className="flex justify-between border-b border-gray-200 pb-2">
+            {/* <div className="flex justify-between border-b border-gray-200 pb-2">
               <span className="font-semibold text-gray-700">Gift Preference:</span>
               <span className="text-gray-900">
                 {data.giftOption === 'cashapp' ? 'CashApp' : 'Physical Gift'}
               </span>
-            </div>
+            </div> */}
             {data.notes && (
               <div className="pt-2">
                 <p className="font-semibold text-gray-700 mb-1">Notes:</p>
