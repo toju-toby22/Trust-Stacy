@@ -5,6 +5,6 @@ export const CONFIG: Config = {
   GOOGLE_CALENDAR_EVENT_URL: 'https://calendar.app.google/1RrS25QF4WWLa9u58',
   EVENT_NAME: 'Wedding Dinner',
   EVENT_DATE: 'December 06, 2025',
-  EVENT_TIME: '5:00 PM',
+  EVENT_TIME: '4:00 PM',
   EVENT_LOCATION: 'Walsh Blanc'
 };

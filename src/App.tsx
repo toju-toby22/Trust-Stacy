@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { RSVPForm } from './RSVPForm';
 import { ConfirmationMessage } from './ConfirmationMessage';
 import { SubmittedData } from './types';
-import bgImage from "./simple-flower-patterns-drawing-21.jpg"
+import bgImage from "./bg.jpg"
 
 export default function App() {
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -20,12 +20,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-600 via-emerald-600 to-teal-600  py-12 px-4 sm:px-6 lg:px-8 relative bg-container flex justify-center"
+    <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8 relative bg-contain flex justify-center"
      style={{
     backgroundImage:`linear-gradient(to bottom right, rgba(202,138,4,0.7), rgba(5,150,105,0.7), rgba(13,148,136,0.7)), url(${bgImage})`,
     backgroundBlendMode: "overlay",
-    width: "100%",
-    backgroundPosition:'center'
+    opacity: "0.95",
+
+    width: "fit",
+    backgroundPosition:'cover',
+    // backgroundRepeat : 'no-repeat'
   }}
     >
       <div className="max-w-3xl mx-auto">
