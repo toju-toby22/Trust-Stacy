@@ -271,11 +271,11 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
 
                  <div>
                   <p className="font-semibold text-emerald-900 mb-1 bg-gradient-to-r from-emerald-700 via-yellow-600 to-emerald-400 bg-clip-text text-transparent">
-                    3. Kids/infants
+                    Kids/infants
                   </p>
                   <p className="text-emerald-800">Kids/infants are not allowed please.</p>
                 </div>
-                
+
                 <div>
                   <p className="font-semibold text-emerald-900 mb-1">
                     When is the RSVP deadline?
