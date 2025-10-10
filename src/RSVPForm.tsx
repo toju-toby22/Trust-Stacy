@@ -120,7 +120,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
 
             <p>With</p>
 
-            <p className="lavishly-yours-regular text-[30px]">Trust & Stacie</p>
+            <p className="lavishly-yours-regular text-[30px]">Stacie & Trust  </p>
             <div className="h-1 w-20 bg-green-500 mx-auto rounded-full mb-4"></div>
             <div className="text-gray-600 space-y-1">
               <p className="text-lg font-semibold">{CONFIG.EVENT_DATE}</p>
@@ -267,6 +267,15 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
                     whose names are on the IV
                   </p>
                 </div>
+
+
+                 <div>
+                  <p className="font-semibold text-emerald-900 mb-1 bg-gradient-to-r from-emerald-700 via-yellow-600 to-emerald-400 bg-clip-text text-transparent">
+                    3. Kids/infants
+                  </p>
+                  <p className="text-emerald-800">Kids/infants are not allowed please.</p>
+                </div>
+                
                 <div>
                   <p className="font-semibold text-emerald-900 mb-1">
                     When is the RSVP deadline?
