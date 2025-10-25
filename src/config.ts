@@ -5,6 +5,6 @@ export const CONFIG: Config = {
   GOOGLE_CALENDAR_EVENT_URL: 'https://calendar.app.google/wiH5rv4xsxZbrcFh7',
   EVENT_NAME: 'Wedding Dinner',
   EVENT_DATE: 'December 06, 2025',
-  EVENT_TIME: '5:00 PM',
-  EVENT_LOCATION: 'Walsh Blanc'
+  EVENT_TIME: '4:00 PM',
+  EVENT_LOCATION: 'Walsh Blanc Plot 269, Mohammadu Buhari Way, Central Business District Abuja, Nigeria'
 };
