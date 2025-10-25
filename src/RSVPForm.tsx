@@ -5,7 +5,7 @@ import { CONFIG } from "./config";
 import { getGuestNameFromURL } from "./utils";
 import image from "./flower-pattern-png-5.png";
 import { FaChevronDown } from "react-icons/fa6";
-
+import { FaCircleChevronDown } from "react-icons/fa6";
 interface RSVPFormProps {
   onSubmissionSuccess: (data: SubmittedData) => void;
 }
@@ -213,36 +213,47 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
           </select>
         </div> */}
 
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+              <h4 className="font-bold text-yellow-800 mb-2 flex items-center">
+                <span className="text-xl mr-2">⚠️</span>
+                Important Instructions
+              </h4>
+              <ul className="text-sm text-yellow-800 space-y-2 text-left">
+                <li className="flex items-start">
+                  <span className="mr-2">1.</span>
+                  <span>Please no spraying of Money.</span>
+                </li>
+
+                  <li className="flex items-start">
+                  <span className="mr-2">2.</span>
+                  <span>Please this is a strictly on invitation basis.</span>
+                </li>
+
+                
+                  <li className="flex items-start">
+                  <span className="mr-2">3.</span>
+                  <span>No Kids Allowed</span>
+                </li>
+                
+              </ul>
+            </div>
+
           <div className="mb-6 bg-gradient-to-r from-yellow-50 via-emerald-50 to-teal-50 rounded-lg p-6 border border-emerald-200">
-            <button
-              onClick={() => setShowQA(!showQA)}
-              className="w-full flex items-center justify-between text-left"
-            >
-              <div>
-                <h3 className="text-xl font-bold text-emerald-800 mb-1">
+            <h3 className="text-xl text-center font-bold text-emerald-800 mb-1">
                   Q & A
                 </h3>
-                <p className="text-sm text-emerald-700">
+
+
+                <div className="flex items-center justify-between px-3 gap-7">
+                   <p className="text-sm text-emerald-700 text-left">
                   For all our friends and family who have lots of questions,
                   please check out our Q & A
                 </p>
-              </div>
-              <svg
-                className={`w-6 h-6 text-emerald-600 transition-transform ${
-                  showQA ? "rotate-180" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
+                  < button onClick={() => setShowQA(!showQA)} className="text-emerald-700 hover:text-emerald-900 focus:outline-none">
+                    <FaCircleChevronDown/>
+                  </ button>
+                </div>
+          
 
             {showQA && (
               <div className="mt-4 space-y-4 border-t border-emerald-200 pt-4">
@@ -253,7 +264,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
                   <p className="text-emerald-800">
                     Should you wish to give a gift, a monetary contribution
                     would be truly appreciated as we build our home together.
-                    Account details: 007844799 Standard Chartered Bank (Stacy)
+                    Account details: 6505547187 Providus bank (Stacie Osuji)
                   </p>
                 </div>
 
@@ -281,8 +292,7 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
                     When is the RSVP deadline?
                   </p>
                   <p className="text-emerald-800">
-                    Please RSVP by February 22nd, so we can have an accurate
-                    headcount. :)
+                    November 14th, 2025 (so we can have accurate headcount).
                   </p>
                 </div>
 
