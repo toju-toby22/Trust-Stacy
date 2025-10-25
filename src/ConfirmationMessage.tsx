@@ -27,15 +27,24 @@ export function ConfirmationMessage({ data, onReturn }: ConfirmationMessageProps
             Your Response Summary:
           </h3>
           <div className="space-y-3">
-            <div className="flex justify-between border-b border-gray-200 pb-2">
+            <div className="flex gap-3 border-b border-gray-200 pb-2">
               <span className="font-semibold text-gray-700">Name:</span>
               <span className="text-gray-900">{data.guestName}</span>
             </div>
-            <div className="flex justify-between border-b border-gray-200 pb-2">
+            <div className="flex gap-3 border-b border-gray-200 pb-2">
               <span className="font-semibold text-gray-700">Attending:</span>
               <span className={`font-semibold ${data.rsvp === 'yes' ? 'text-green-600' : 'text-red-600'}`}>
                 {data.rsvp === 'yes' ? '✓ Yes' : '✗ No'}
               </span>
+
+              
+            </div>
+
+               <div className="flex gap-3 border-b border-gray-200 pb-2">
+              <span className="font-semibold text-gray-700">Note:</span>
+             <p> Please keep the E-IV Card saved as you will need to present it before gaining access to the venue</p>
+
+              
             </div>
             {/* <div className="flex justify-between border-b border-gray-200 pb-2">
               <span className="font-semibold text-gray-700">Gift Preference:</span>
