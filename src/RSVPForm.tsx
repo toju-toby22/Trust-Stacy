@@ -125,9 +125,9 @@ export function RSVPForm({ onSubmissionSuccess }: RSVPFormProps) {
             <div className="text-gray-600 space-y-1">
               <p className="text-lg font-semibold">{CONFIG.EVENT_DATE}</p>
               <p>{CONFIG.EVENT_TIME}</p>
-              <span className="flex justify-between ">
-                <p className="font-bold text-[16px]">Venue:</p>
-                 <p>{CONFIG.EVENT_LOCATION}</p>
+              <span className="flex justify-between gap-2 items-center">
+                <p className="font-bold ">Venue:</p>
+                 <p className="text-[10px] text-left ">{CONFIG.EVENT_LOCATION}</p>
               </span>
              
             </div>
